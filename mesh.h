@@ -9,6 +9,11 @@ class mesh
 {
     public:
           wchar_t Process;
+          double atol;                 // absolute tolerence 
+          double rtol;                 // relative tolerence
+          double h1;                   // first guess step size 
+          double hmin;                 // minimum allowed guess step size
+          double tstart;               // start time step
           double tend;                 // end time step
           int n_tstep;              //no of time-steps
           double v_min;                // minimum volume/ size of grid
