@@ -112,8 +112,6 @@ void PBE :: odesolver()
     
     for ( int i=0;i<m;i++) Nstart2[i]=Nstart1[i]; 
 
-    double atol=1e-5, rtol=atol, h1=0.01, hmin=0.0, tstart=0.0;     //integration parameter 
-     // this is for breakage and aggregation  odes solver simulataneous h1-> first guess step size hmin-> minimum allowed step size
      Output out(n_tstep-1);
      breakage_aggregation c(Process,eta,n,dgnl,bij,Sk,aw_b,aw_d,bw_b,bw_d,Gam,a,I);
      Odeint<StepperDopr5<breakage_aggregation> > ode(Nstart2,tstart,tend,atol,rtol,h1,hmin,out,c); 
@@ -126,6 +124,12 @@ void PBE :: odesolver()
         {
         for(int j=0;j<m;j++)   N[i][j] = out.ysave[j][i];  
         }  
+/*--------    changes made by manish saini ------------------------------------------------------*/
+   count= out.count;
+   t_Afsol= new double[count]; 
+   for (int i=0;i<out.count;i++)  t_Afsol[i]=out.xsave[i];
+           
+ /* ------------------------------------------------------------------------------------*/
    
  }
  
