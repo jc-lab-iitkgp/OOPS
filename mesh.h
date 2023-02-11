@@ -37,5 +37,6 @@ class mesh
           double **bij;                //integral of daughter distribution function
           double *Sk;                  //Selection function value
           double *t_Afsol;              // time step after solution
+          int count                     // total number of the steps after the odesolver running
           ofstream file1;
 };
