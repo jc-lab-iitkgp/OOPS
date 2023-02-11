@@ -36,5 +36,7 @@ class mesh
           double **aw_b,**aw_d;          //weights for aggregation
           double **bij;                //integral of daughter distribution function
           double *Sk;                  //Selection function value
+          double *t_Afsol;              // time step after solution
+          double **Number_dist;     // number distribution after solution for each time step
           ofstream file1;
 };
