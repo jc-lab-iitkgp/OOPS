@@ -10,8 +10,13 @@ using namespace std;
 
 void PBE::set_param()
 {
-  tend = 100.0;
-  n_tstep =20;                                        // end time step
+  atol=1e-5;                                       // absolute error
+  rtol=1e-5;                                       // relative error
+  h1=0.01;                                         // first guess step size 
+  hmin=0;                                          // minimum allowed first guess step size 
+  tstart=0;                                        // start time step
+  tend = 100.0;                                    // end time step
+  n_tstep =20;                                      
   v_min=1e-5;                                     // minimum size /volume of grid 
   v_max=100.0;                                      // maximum size / volume of grid
   r=1.5;                                          // geometric grid ratio
