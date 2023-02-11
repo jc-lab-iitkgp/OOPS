@@ -25,7 +25,7 @@ class mesh
           double *w;                   // bin width array
           double *x;                   // pivots array
           double *Nstart1;             // initial condition for all pivots
-          double **N;
+          double **N;                  // number distribution after solution for each time step
           double *Gam;                 // Gam for breakage rate 
           double ***eta;               // eta_ijk generation matrix for aggreagtion
           double **n;                  // n_ij generation matrix for breakage
@@ -37,6 +37,5 @@ class mesh
           double **bij;                //integral of daughter distribution function
           double *Sk;                  //Selection function value
           double *t_Afsol;              // time step after solution
-          double **Number_dist;     // number distribution after solution for each time step
           ofstream file1;
 };
